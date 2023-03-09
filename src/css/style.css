@@ -1,1 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+
+img {
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: aqua;
+}
+
+.main .conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 93vw;
+    z-index: 1;
+}
+
+.main .conteudo .informacoes {
+    margin-bottom: 80px;
+    margin-left: 150px;
+}
+
+.main .conteudo .botoes-carrossel {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.main .conteudo .botoes-carrossel .botao {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.main .conteudo .informacoes .logo {
+    margin-bottom: 50px;
+    width: 250px;
+}
+
+.main .conteudo .informacoes p {
+    width: 400px;
+}
+
+.main .conteudo .informacoes{
+    margin-bottom: 80px;
+}
+
+.main .menu-lateral {
+    width: 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.main .menu-lateral ul li {
+    margin-bottom: 10px;
+}
+
+.main .menu-lateral ul li a .icone {
+    width: 50px;
+}
