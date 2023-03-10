@@ -1,69 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
 
-img {
-    width: 100%;
+html {
+    font-size: 62.5%;
 }
 
-.main {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    background-color: aqua;
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+main:after {
+    content: "";
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) -2%, rgba(0, 0, 0, 0.059) 50%, rgba(0, 0, 0, 1) 105%);
+    z-index: -1;
 }
 
 .main .conteudo {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 93vw;
-    z-index: 1;
-}
-
-.main .conteudo .informacoes {
-    margin-bottom: 80px;
-    margin-left: 150px;
-}
-
-.main .conteudo .botoes-carrossel {
-    text-align: center;
-    margin-top: 100px;
-}
-
-.main .conteudo .botoes-carrossel .botao {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    border: none;
-    margin-left: 5px;
-    cursor: pointer;
+    justify-content: space-evenly;
+    min-height: 100vh;
 }
 
 .main .conteudo .informacoes .logo {
-    margin-bottom: 50px;
-    width: 250px;
-}
-
-.main .conteudo .informacoes p {
-    width: 400px;
-}
-
-.main .conteudo .informacoes{
+    max-width: 450px;
     margin-bottom: 80px;
+    filter: invert(0); /* Invertendo as cores da imagem */
+}
+
+.main .conteudo .informacoes .descricao {
+    width: 50%;
+    color: #fff;
+    text-shadow: 0px 0px 5px black;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1.6rem;
+}
+
+.main .conteudo .botoes-carrossel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main .conteudo .botoes-carrossel .botao {
+    background-color: #fff;
+    box-shadow: 0px 0px 3px black;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+
+.main .conteudo .botoes-carrossel .botao.selecionado {
+    background-color: #2E4950;
 }
 
 .main .menu-lateral {
-    width: 7vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+    min-height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 80px;
 }
 
-.main .menu-lateral ul li {
-    margin-bottom: 10px;
+.main .menu-lateral ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .main .menu-lateral ul li a .icone {
-    width: 50px;
+    width: 30px;
+    transition: .3s ease-in-out;
+    filter: invert(0.5);
+}
+
+.main .menu-lateral ul li a .icone:hover {
+    transform: scale(1.2);
+}
+
+.main .carrossel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.main .carrossel .imagem {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem .7s;
+}
+
+.main .carrossel .imagem.ativa {
+    display: block;
+}
+
+/*  CRIANDO ANIMAÇÃO DA IMAGEM DE FUNDO  */
+@keyframes mudarImagem {
+    from {
+        opacity: 0.85;
+    }
+    to {
+        opacity: 1;
+    }
 }
