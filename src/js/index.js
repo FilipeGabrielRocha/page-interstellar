@@ -1,14 +1,16 @@
+import esconderImagemAtivado from "./service/esconderImagemAtiva.js";
+import desativarBotaoSelecionado from "./service/desativarBotaoSelecionado.js";
+
 const botoesCarrossel = document.querySelectorAll(".botao");
 const imagensFundo = document.querySelectorAll(".imagem");
 
 botoesCarrossel.forEach((botao, index) => {
   botao.addEventListener("click", () => {
-    const imagemFundo = document.querySelector(".ativa");
-    imagemFundo.classList.remove("ativa");
+    esconderImagemAtivado();
     imagensFundo[index].classList.add("ativa");
 
-    const botaoSelecionado = document.querySelector(".selecionado");
-    botaoSelecionado.classList.remove("selecionado");
+    desativarBotaoSelecionado();
     botao.classList.add("selecionado");
   });
 });
+
