@@ -30,7 +30,7 @@ main:after {
 
 .main .conteudo .informacoes .logo {
     max-width: 450px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     filter: invert(0); /* Invertendo as cores da imagem */
 }
 
