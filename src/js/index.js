@@ -3,18 +3,12 @@ const imagensFundo = document.querySelectorAll(".imagem");
 
 botoesCarrossel.forEach((botao, index) => {
   botao.addEventListener("click", () => {
-    imagensFundo.forEach((imagemFundo) => {
-      if (imagemFundo.classList.contains("ativa")) {
-        imagemFundo.classList.remove("ativa");
-      }
-    });
+    const imagemFundo = document.querySelector(".ativa");
+    imagemFundo.classList.remove("ativa");
     imagensFundo[index].classList.add("ativa");
 
-    botoesCarrossel.forEach((botaoSelecionado) => {
-      if (botaoSelecionado.classList.contains("selecionado")) {
-        botaoSelecionado.classList.remove("selecionado");
-      }
-    });
-    botoesCarrossel[index].classList.add("selecionado");
+    const botaoSelecionado = document.querySelector(".selecionado");
+    botaoSelecionado.classList.remove("selecionado");
+    botao.classList.add("selecionado");
   });
 });
